@@ -49,7 +49,16 @@ if(dia=="segunda" || dia=="terça" || dia == "quarta" || dia=="quinta" || dia=="
 }else{
     console.log("Erro")
 }
-
 //questão 04
-let hora = new Date().getHours()
-console.log(hora)
+let tempo = {hora: new Date().getHours(), minutos: new Date().getMinutes()}
+// tempo.hora = 18;
+// tempo.minutos = 1;
+if(tempo.hora>=6 && tempo.hora<=18){
+    if(tempo.hora==18 && tempo.minutos>0){
+        console.log(`Após às 18h é noite`)
+        return
+    }
+    console.log(`Dia`)
+}else{
+    console.log(`Noite`)
+}
