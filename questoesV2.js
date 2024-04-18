@@ -39,7 +39,7 @@ console.log(calcularIdade(2001))
 console.log(calcularIdade(1956))
 
 function verificarDia(dia) {
-    let diaSemana = dia.toLowerCase()
+    let diaSemana = dia.toLowerCase() //transformar a string em minusculo 
     switch (diaSemana) {
         case 'sábado':
         case 'domingo':
@@ -58,7 +58,7 @@ function verificarDia(dia) {
     }
 }
 console.log(verificarDia('segunda'))
-console.log(verificarDia('SÁBADO'))
+console.log(verificarDia('SABADO'))
 
 
 function diaNoite(hora){
