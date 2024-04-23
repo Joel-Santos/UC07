@@ -7,7 +7,7 @@ class Aluno{
         this.nome = nome;
         this.matricula =  matricula;
         this.disciplina = disciplina;
-    }  
+    }
     setNome(nome){ //setar o valor de um atributo
         this.nome = nome;
     }
@@ -21,10 +21,18 @@ class Aluno{
         return this.matricula;
     }
     setDisciplina(disciplina){
-        this.disciplina = disciplina;
+        this.disciplina.push(disciplina);
     }
-    getDisciplina(){
-        return this.disciplina;
+    getDisciplina(){  
+      for(let i=0; i<this.disciplina.length; i++){
+            console.table(this.disciplina[i]);
+      }    
     }
+    boletim(){
+        for(let i=0; i<this.disciplina.length; i++){
+            console.table(this.disciplina[i].situacaoDisciplina());
+        }
+    }
+
 }
 module.exports = Aluno;
