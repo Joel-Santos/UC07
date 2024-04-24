@@ -30,9 +30,8 @@ class Aluno{
     }
     boletim(){
         for(let i=0; i<this.disciplina.length; i++){
-            console.table(this.disciplina[i].situacaoDisciplina());
+            console.log(this.disciplina[i].situacaoDisciplina());
         }
     }
-
 }
 module.exports = Aluno;
