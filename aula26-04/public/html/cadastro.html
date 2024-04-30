@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de orçamento</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de orçamento</h1>
+    </header>
+    <main>
+        <section>
+            <h2> Digites os dados abaixo</h2>
+            <form action="/cadastro" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome">
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" id="telefone">
+                <label for="tipoServico">Tipo de serviço:</label>
+                <select name="servico" id="servico">
+                    <option value="Manutenção de Micro">Manutenção de Micro </option>
+                    <option value="Visita">Visita </option>
+                    <option value="Acesso Remoto">Acesso Remoto </option>
+                </select>
+                <label for="descricao">Detalhamento do Problema:</label>
+                <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+                <input type="submit" name="Enviar Dados" id="enviar">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

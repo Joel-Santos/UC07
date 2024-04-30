@@ -19,6 +19,9 @@ app.get('/pagina03', (req,res)=>{
     res.sendFile(path.join(__dirname, 'pagina03.html'));
 });
 
+app.get('/volte', (req, res)=>{
+    res.redirect('/');
+});
 
 app.listen(porta, ()=>{
     console.log(`aplicação rodando em http://localhost:${porta}`);
