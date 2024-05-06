@@ -8,7 +8,7 @@ class ClienteCrontoller{
         res.send('Rota dos clientes');
     }
     formCadastro(req, res){
-        res.sendFile(path.join(__dirname, '../public', 'clienteForm.html'));
+        res.sendFile(path.join(__dirname, '../public/html/cliente', 'clienteForm.html'));
     }
     cadastro(req, res){
         const {nome, email} = req.body;

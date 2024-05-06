@@ -8,7 +8,7 @@ class ProdutoController{
         res.send('Essa é a rota inicial dos produtos');
     }
     formCadastro(req, res){
-        res.sendFile(path.join(__dirname, '../public', 'produtoForm.html'));
+        res.sendFile(path.join(__dirname, '../public/html/produto', 'produtoForm.html'));
     }
     cadastro(req,res){
         const {nome, preco} = req.body;
