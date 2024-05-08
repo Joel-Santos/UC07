@@ -10,4 +10,4 @@ class Fornecedor{
     }
 
 }
-module.exports = Produto;
+module.exports = Fornecedor;

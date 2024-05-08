@@ -5,7 +5,8 @@ let listaProdutos = []
 
 class ProdutoController{
     home(req, res){
-        res.send('Essa é a rota inicial dos produtos');
+        res.sendFile(path.join(__dirname, '../public/html/produto', 'homepageProduto.html'));
+
     }
     formCadastro(req, res){
         res.sendFile(path.join(__dirname, '../public/html/produto', 'produtoForm.html'));
