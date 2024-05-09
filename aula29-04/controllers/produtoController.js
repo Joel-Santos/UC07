@@ -18,9 +18,11 @@ class ProdutoController{
         listaProdutos.push(produto)
         res.send({"Dados gravados com sucesso!": produto});
     }
-
     listagem(req, res){
         res.json(listaProdutos)
+    }
+    visualizarProdutos(req, res){
+        res.sendFile(path.join(__dirname, '../public/html/produto', 'listarprodutos.html'));
     }
 }
 module.exports = new ProdutoController();
