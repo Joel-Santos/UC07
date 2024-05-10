@@ -1,3 +1,4 @@
+let chave = 1;
 class Course {
     //construtor da classe 
     constructor(){
@@ -9,7 +10,7 @@ class Course {
     }
     //criar um curso
     createCourse(name, description){
-        const id = `c${this.courses.length+1}`; //Simulando um id único
+        const id = `c${chave++}`; //Simulando um id único
         const newCourse = {id, name, description};
         this.courses.push(newCourse);
         return newCourse;
