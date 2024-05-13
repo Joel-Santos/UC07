@@ -11,7 +11,8 @@ class CourseController{
     createCourse (req, res){
         const {name, description} = req.body;
         const newCourse = courseModel.createCourse(name, description);
-        res.status(201).json(newCourse);
+        //res.status(201).json(newCourse);
+        res.status(201).redirect('/');
     }
     
     getCourseById(req,res){
