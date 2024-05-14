@@ -46,7 +46,7 @@
                     let remover = document.createElement('button');
                     remover.innerText = "Remover";
                    // remover.setAttribute('onclick', removerCurso())
-                    remover.addEventListener('click',()=>{
+                    remover.addEventListener('click',() => {
                         removerCurso(c.id)
                     })
                     let li = document.createElement('li');
@@ -57,9 +57,22 @@
             });
         }
         function removerCurso(id){
-            alert(id);
+            console.log(id)
+            fetch(`/courses/${id}`, {
+                 method: 'DELETE'
+            })
+            .then(response =>{
+                if(response.ok){
+                    alert('Curso removido com sucesso');
+                    window.location.href = '/';
+                }else{
+                    alert('Curso não existe ou não pode ser deletado');
+                    console.error('Error:', response);
+                }
+            })
+            .catch(error => console.log('Error:', error));
         }
-
+    
         exibirCursos();
 
     </script>

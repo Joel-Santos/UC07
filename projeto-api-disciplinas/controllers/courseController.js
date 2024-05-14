@@ -29,6 +29,7 @@ class CourseController{
         if(!courseDeleted){
             return res.status(404).json({msg: 'Course not found'});
         }
+        //res.redirect('/');
         res.json({msg: 'Course deleted sucessfully'});
     }
     updateCourse(req, res){
