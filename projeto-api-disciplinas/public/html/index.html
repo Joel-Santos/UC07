@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem e cadastro de cursos</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
@@ -43,15 +43,21 @@
             })
             .then(cursos =>{
                 cursos.forEach(c => {
+                    let editar = document.createElement('button');
                     let remover = document.createElement('button');
                     remover.innerText = "Remover";
+                    editar.innerText = "Editar";
                    // remover.setAttribute('onclick', removerCurso())
                     remover.addEventListener('click',() => {
-                        removerCurso(c.id)
+                        removerCurso(c.id);
+                    })
+                    editar.addEventListener('click',() => {
+                        editarCurso(c.id);
                     })
                     let li = document.createElement('li');
                    li.innerText = `${c.name} -  ${c.description}`;
-                   li.appendChild(remover)
+                   li.appendChild(editar);
+                   li.appendChild(remover);
                    listagemCursos.appendChild(li);
                 });
             });
@@ -71,6 +77,10 @@
                 }
             })
             .catch(error => console.log('Error:', error));
+        }
+        
+        function editarCurso(id){
+            window.location.href = `/courses/edit/${id}`
         }
     
         exibirCursos();
