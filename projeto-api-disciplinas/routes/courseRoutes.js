@@ -10,7 +10,9 @@ const router = express.Router();
 // Define as rotas para lidar com diferentes operações de curso
 
 // Rota para listar todos os cursos
-router.get('/courses', courseController.getAllCourses);
+router.get('/courses', courseController.homeCourse);
+// Rota para listar todos os cursos
+router.get('/courses/listar', courseController.getAllCourses);
 
 // Rota para buscar um curso por ID
 router.get('/courses/:id', courseController.getCourseById);

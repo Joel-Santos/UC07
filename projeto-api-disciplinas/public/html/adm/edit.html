@@ -54,7 +54,7 @@
                 .then(response => response.json())
                 .then(update =>{
                     alert('Curso atualizado!');
-                    window.location.href = '/';
+                    window.location.href = '/courses';
                 })
                 .catch(error=> console.error ('Error:', error));
              });

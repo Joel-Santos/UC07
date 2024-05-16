@@ -7,6 +7,11 @@ const path = require('path');
 
 // Define a classe CourseController para gerenciar operações relacionadas aos cursos
 class CourseController {
+
+    // Método para exibir o formulário de edição de um curso
+    homeCourse(req, res) {
+        res.sendFile(path.join(__dirname, '../public/html/adm', 'index.html')); // Envia o arquivo de formulário de edição HTML
+    }
     // Método para obter todos os cursos
     getAllCourses(req, res) {
         const courses = courseModel.getAllCourses(); // Obtém todos os cursos do modelo
@@ -18,7 +23,7 @@ class CourseController {
         const { name, description } = req.body; // Extrai o nome e a descrição do corpo da solicitação
         const newCourse = courseModel.createCourse(name, description); // Cria um novo curso com os dados fornecidos
         //res.status(201).json(newCourse); // Retorna o novo curso em formato JSON com o código de status 201 (Created)
-        res.status(201).redirect('/'); // Redireciona para a página inicial após a criação do curso
+        res.status(201).redirect('/courses'); // Redireciona para a página inicial após a criação do curso
     }
     
     // Método para obter um curso por ID
@@ -45,8 +50,9 @@ class CourseController {
     // Método para exibir o formulário de edição de um curso
     formEditCourse(req, res) {
         const courseId = req.params.id; // Obtém o ID do curso dos parâmetros da solicitação
-        res.sendFile(path.join(__dirname, '../public/html', 'edit.html')); // Envia o arquivo de formulário de edição HTML
+        res.sendFile(path.join(__dirname, '../public/html/adm', 'edit.html')); // Envia o arquivo de formulário de edição HTML
     }
+    
 
     // Método para atualizar um curso por ID
     updateCourse(req, res) {
